@@ -1,0 +1,8 @@
+
+
+DO NOT CREATE REACT-NATIVE PROJECT WITH WEBSTORM.
+
+npm install -g expo-cli
+expo init AwesomeProject
+cd AwesomeProject
+npm start
