@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import OperationsScreen from "./screens/OperationsScreen";
 import PatientsScreen from "./screens/PatientsScreen";
 import SettingScreen from "./screens/SettingScreen";
-import {Icon} from "native-base";
+import {Header, Body, Title, Icon, Left, Right} from "native-base";
 import {useEffect, useState} from "react";
 import * as Font from 'expo-font';
 import {Ionicons} from '@expo/vector-icons';
@@ -36,31 +36,43 @@ export default function App() {
                     <AppLoading/>
                 ) : (
                     <NavigationContainer>
+                        {/*<Header>*/}
+                        {/*    <Left>*/}
+                        {/*        <Icon name={'eyedrop'}/>*/}
+                        {/*    </Left>*/}
+                        {/*    <Body>*/}
+                        {/*        <Title>Header</Title>*/}
+                        {/*    </Body>*/}
+                        {/*    <Right></Right>*/}
+                        {/*</Header>*/}
                         <Tab.Navigator>
                             <Tab.Screen name="Operations"
+                                        component={OperationsScreen}
                                         options={{
                                             tabBarLabel: "Interventi",
                                             tabBarIcon: ({focused, color, size}) => {
                                                 return <Icon name={"car"} fontSize={size} style={{color: color}}/>
                                             }
                                         }}
-                                        component={OperationsScreen}/>
+                            />
                             <Tab.Screen name="Patients"
+                                        component={PatientsScreen}
                                         options={{
                                             tabBarLabel: "Pazienti",
                                             tabBarIcon: ({focused, color, size}) => {
                                                 return <Icon name={"man"} fontSize={size} style={{color: color}}/>
                                             }
                                         }}
-                                        component={PatientsScreen}/>
+                            />
                             <Tab.Screen name="Settings"
+                                        component={SettingScreen}
                                         options={{
                                             tabBarLabel: "Impostazioni",
                                             tabBarIcon: ({focused, color, size}) => {
                                                 return <Icon name={"settings"} fontSize={size} style={{color: color}}/>
                                             }
                                         }}
-                                        component={SettingScreen}/>
+                            />
                         </Tab.Navigator>
                     </NavigationContainer>
                 )
