@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {Container, Content, Header} from "native-base";
-import GroupedList from "../components/GroupedList";
+import CustomList from "../components/CustomList";
 
 interface OwnProps {
     navigation: any
@@ -10,18 +10,28 @@ type Props = OwnProps;
 
 const OperationsScreen: FunctionComponent<Props> = (props) => {
 
-    const operations = {
-        "11/12/2020": [
-            {name: "Mario Rossi"},
-            {name: "Franco Ricci"}
-        ],
-        "12/12/2020": [
-            {name: "Mario Rossi"}
-        ],
-        "13/12/2020": [
-            {name: "Mario Rossi"}
-        ],
-    }
+    const operations = [
+        {
+            name: "Mario Rossi",
+            data: "11/12/2020"
+        },
+        {
+            name: "Federico Belli",
+            data: "15/12/2020"
+        },
+        {
+            name: "Riccardo Valli",
+            data: "13/12/2020"
+        },
+        {
+            name: "Valerio Franchi",
+            data: "15/12/2020"
+        },
+        {
+            name: "Franco Ricci",
+            data: "11/12/2020"
+        },
+    ]
 
     const onOperationSelection = (groupListItem:Record<any, any>) => {
         console.log(`selected ${groupListItem.name}`)
@@ -30,18 +40,14 @@ const OperationsScreen: FunctionComponent<Props> = (props) => {
     return (
         <Container>
             <Content>
-                <GroupedList
+                <CustomList
                     data={operations}
-                    visualizedDataIndex={"name"}
+                    groupIndex={"data"}
+                    labelIndex={"name"}
                     onListItemSelection={onOperationSelection}
                 />
             </Content>
         </Container>
-
-
-        // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        //     <Text>Operations</Text>
-        // </View>
     );
 };
 

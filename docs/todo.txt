@@ -1,0 +1,5 @@
+
+
+
+
+- some Icon from NativeBase are not visualized/loaded

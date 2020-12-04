@@ -1,6 +1,5 @@
 import React, {FunctionComponent} from 'react';
 import {Text, View} from "native-base";
-import RootLayout from "../components/RootLayout";
 
 interface OwnProps {
     navigation:any
