@@ -64,27 +64,13 @@ const MyTabBar: FunctionComponent<Props> = (props) => {
                     {buttonIcon}
                     <Text>{label}</Text>
                 </Button>
-
-                // <TouchableOpacity
-                //     accessibilityRole="button"
-                //     accessibilityState={isFocused ? { selected: true } : {}}
-                //     accessibilityLabel={options.tabBarAccessibilityLabel}
-                //     testID={options.tabBarTestID}
-                //     onPress={onPress}
-                //     onLongPress={onLongPress}
-                //     style={{ flex: 1 }}
-                // >
-                //     <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
-                //         {label}
-                //     </Text>
-                // </TouchableOpacity>
             );
         }
     )
 
     return (
-        <Footer>
-            <FooterTab>
+        <Footer >
+            <FooterTab >
                 {footerButtons}
             </FooterTab>
         </Footer>

@@ -5,7 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import OperationsScreen from "./screens/OperationsScreen";
 import PatientsScreen from "./screens/PatientsScreen";
 import SettingScreen from "./screens/SettingScreen";
-import {Body, Container, Header, Icon, Left, Right, StyleProvider, Title} from "native-base";
+import {Body, Container, Content, Header, Icon, Left, Right, StyleProvider, Title} from "native-base";
 import * as Font from 'expo-font';
 import {AppLoading} from "expo";
 import MyTabBar from "./components/MyTabBar";
@@ -48,6 +48,7 @@ export default function App() {
                                 <Right>
                                 </Right>
                             </Header>
+
                             <Tab.Navigator
                                 tabBar={props => <MyTabBar {...props} />}
                             >
@@ -79,6 +80,7 @@ export default function App() {
                                             }}
                                 />
                             </Tab.Navigator>
+
                         </Container>
                     </NavigationContainer>
                 )
